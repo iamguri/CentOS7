@@ -1,0 +1,20 @@
+i hava made a script to make it quick all you need to do is to make changes according to your directory structure
+here i placed my index.html file in /web/dark/ directory you can change according to yours
+i downloaded a free responsive website from  https://freebiesbug.com/code-stuff/html-website-templates/
+
+
+yum install httpd*
+systemctl start httpd
+systemctl enable httpd
+echo "<virtualhost *:80>" >> /etc/httpd/conf/httpd.conf
+echo "servername www.mywebsite.local" >> /etc/httpd/conf/httpd.conf
+echo "documentroot /web/dark/" >> /etc/httpd/conf/httpd.conf
+echo "</virtualhost>" >> /etc/httpd/conf/httpd.conf
+echo "<directory /web/dark>" >> /etc/httpd/conf/httpd.conf
+echo "require all granted" >> /etc/httpd/conf/httpd.conf
+echo "</directory>" >> /etc/httpd/conf/httpd.conf
+echo "127.0.0.1  www.mywebsite.local" >> /etc/hosts
+systemctl restart httpd
+setenforce 0
+firefox www.mywebsite.local
+don't forget to change the directory path on httpd.conf file
