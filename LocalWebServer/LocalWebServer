@@ -5,21 +5,21 @@ I downloaded a free responsive website from  https://freebiesbug.com/code-stuff/
 
 Step 1:
 [root@Desktop]# vi localwebserver
-'''python
-yum install httpd*
-systemctl start httpd
-systemctl enable httpd
-echo "<virtualhost *:80>" >> /etc/httpd/conf/httpd.conf
-echo "servername www.mywebsite.local" >> /etc/httpd/conf/httpd.conf
-echo "documentroot /web/dark/" >> /etc/httpd/conf/httpd.conf
-echo "</virtualhost>" >> /etc/httpd/conf/httpd.conf
-echo "<directory /web/dark>" >> /etc/httpd/conf/httpd.conf
-echo "require all granted" >> /etc/httpd/conf/httpd.conf
-echo "</directory>" >> /etc/httpd/conf/httpd.conf
-echo "127.0.0.1  www.mywebsite.local" >> /etc/hosts
-systemctl restart httpd
-setenforce 0
-firefox www.mywebsite.local
+'''dff
+- yum install httpd*
+- systemctl start httpd
+- systemctl enable httpd
++ echo "<virtualhost *:80>" >> /etc/httpd/conf/httpd.conf
++ echo "servername www.mywebsite.local" >> /etc/httpd/conf/httpd.conf
++ echo "documentroot /web/dark/" >> /etc/httpd/conf/httpd.conf
++ echo "</virtualhost>" >> /etc/httpd/conf/httpd.conf
++ echo "<directory /web/dark>" >> /etc/httpd/conf/httpd.conf
++ echo "require all granted" >> /etc/httpd/conf/httpd.conf
++ echo "</directory>" >> /etc/httpd/conf/httpd.conf
++ echo "127.0.0.1  www.mywebsite.local" >> /etc/hosts
+! systemctl restart httpd
+! setenforce 0
+! firefox www.mywebsite.local
 '''
 
 Step 3:
