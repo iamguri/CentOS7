@@ -1,0 +1,35 @@
+I hava made a script to make it quick, if you want to process it step by step then you can perform it without script.
+All you need to do is to make changes according to your directory structure
+Here i placed my index.html file in /web/dark/ directory you can change according to yours
+I downloaded a free responsive website from  https://freebiesbug.com/code-stuff/html-website-templates/
+
+Step 1:
+[root@Desktop]# vi localwebserver
+
+yum install httpd*
+systemctl start httpd
+systemctl enable httpd
+echo "<virtualhost *:80>" >> /etc/httpd/conf/httpd.conf
+echo "servername www.mywebsite.local" >> /etc/httpd/conf/httpd.conf
+echo "documentroot /web/dark/" >> /etc/httpd/conf/httpd.conf
+echo "</virtualhost>" >> /etc/httpd/conf/httpd.conf
+echo "<directory /web/dark>" >> /etc/httpd/conf/httpd.conf
+echo "require all granted" >> /etc/httpd/conf/httpd.conf
+echo "</directory>" >> /etc/httpd/conf/httpd.conf
+echo "127.0.0.1  www.mywebsite.local" >> /etc/hosts
+systemctl restart httpd
+setenforce 0
+firefox www.mywebsite.local
+
+
+Step 2:
+Save the file using shit+: wq
+
+step 3: 
+Then run the script by using following command
+[root@Desktop]# ./localwebserver
+
+Note:
+1. Don't forget to change the directory path on httpd.conf file
+2. OS: CentOS7
+3. I Used Custom Documentation instead of default.
