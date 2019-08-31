@@ -1,0 +1,42 @@
+			User Management
+
+In this we are going to have a look at:
+1. how to add user
+2. how to grant particular permission to the user
+3. and other various commands as well.
+
+
+MariaDB [Library_db]> create user 'sarah'@'localhost' identified by '1234';
+Note: Create any user with password using above command.
+
+MariaDB [Library_db]> grant select on Student.*  to  'guri'@'localhost';
+(Granting Select command permissions to user 'guri')
+
+Note: To grant privileges on particular command we use “grant <on_particular_command> on <database_name>.* to ‘<username>’@’localhost’; “ 
+
+
+MariaDB [Student] >show grants for ‘guri’@’localhost’;
+Note: It will show all the grants options for the particular user.
+
+MariaDB [Library_db]> exit
+
+Now login into the mariadb using credentials
+[root@Server ~]# mysql -u guri -p1234 -h localhost
+
+MariaDB [(none)]> show databases;
+
+MariaDB [(none)]> use Student;
+
+
+# mysqladmin -u root password ‘123’;
+Note: To set root password
+
+# mysqladmin -u root -p123 password ‘1234’;
+Note: To change root password. 
+
+MariaDB [Student]> select user from mysql.user;
+Note: To check the list of users.
+
+MariaDB [Student]> select user,host from mysql.user;
+Note: It will show list of users with their hostname.
+
