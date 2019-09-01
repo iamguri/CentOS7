@@ -21,4 +21,4 @@ nodes     : to skip the option of securing certificate with paraphrase (to skip 
 
 
 How to configure website on local machine?
-follow this : [visit here] https://github.com/iamguri/CentOS7/blob/master/LocalWebServer/LocalWebServer_Script("Local Web Server")
+follow this : [visit here] https://github.com/iamguri/CentOS7/blob/master/LocalWebServer/LocalWebServer_Script ("Local Web Server")
