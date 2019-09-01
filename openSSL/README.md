@@ -23,4 +23,4 @@ Where: <br />
 
 
 How to configure website on local machine?
-[Visit Here](https://github.com/iamguri/CentOS7/blob/master/LocalWebServer/LocalWebServer_Script "Local Web Server")
+[Visit Here](https://https://github.com/iamguri/CentOS7/tree/master/LocalWebServer "Local Web Server")
