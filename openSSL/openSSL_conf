@@ -1,17 +1,6 @@
-now the command that we are going to run is
+The command that we are going to run is:
 [root@Desktop]# openssl req -x509 -days 365 newkey rsa:2048 -nodes -keyout /etc/pki/tls/private/key.key -out /etc/pki/tls/certs/key.crt
 
-Where:
-
-req -x509 : 509 certificate signin request
-days 365  : validity in days
-newkey    : creation of new key 
-rsa:2048  : encrypting with 2048 (you can use 3072, 4096 etc).
-keyout    : for key
-out       : for certificate
-nodes     : to skip the option of securing certificate with paraphrase (to skip asking password again and again generally).
-
-now time to configure the SSL on our local machine.
 
 Step 1:
 intall the packages:
@@ -32,7 +21,7 @@ State Name:
 Locality/City:
 Organization Name:
 Unit Name:
-Common Name: **here you need to provide your website address**
+Common Name: <here you need to provide your website address><www.abc.local>
 Email: 
 
 Step 4:
@@ -54,8 +43,9 @@ require all granted
 </Directory>
 
 Then save this file and exit the vi editor.
+
 Step 5:
-Add an index file on DocumentRoot directory and add IP Add & website name on host file
+Add an index file on DocumentRoot directory and add IP address & website name on host file
 [root@Desktop]# touch /web/index.html
 [root@Desktop]# echo "127.0.0.1 www.mywebsite.local" >> /etc/hosts
 
@@ -64,7 +54,7 @@ Now restart the apache services and browse the website on your favorite web-brow
 [root@Desktop]# systemclt restart httpd
 [root@Desktop]# firefox https://www.mywebsite.local
 
-voila you have just successfully configured a fully flegde secure website.
+voila! you have just successfully configured a fully flegde secure website.
 
 How to configure website on local machine?
 follow this : [Visit here] (https://github.com/iamguri/CentOS7/blob/master/LocalWebServer/LocalWebServer_Script "Local WebServer")
